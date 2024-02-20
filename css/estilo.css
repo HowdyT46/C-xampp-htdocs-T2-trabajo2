@@ -1,0 +1,80 @@
+*{ margin: 0; padding: 0;}
+
+body{
+    background-color: #d0dcfe;
+    color:            #fff;
+}
+#contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header header header"
+                         "contenido contenido sidebar"
+                         "widget1 widget2 sidebar"
+                         "footer footer footer";
+
+
+    background: rgb(240, 197, 255) ;
+}
+.bordes{
+    background: rgb(124, 0, 186);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+#header{
+    background-color: #5e1f8a;
+    grid-area: header;
+}
+
+#contenido{
+    grid-area: contenido;
+
+}
+
+#sidebar{
+    grid-column: 3/4;
+    grid-area: sidebar;
+    background: rgb(161, 41, 221);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+#widget1{
+    grid-area: widget1;
+    background: #c300ff;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+#widget2{
+    background: #c300ff;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    grid-area: widget2;
+}
+#footer{
+    grid-area: footer;
+   
+    background-color: rgb(108, 0, 165);
+}
+@media screen and (max-width: 756px){
+    #contenedor{
+      
+        grid-template-areas: "header header header"
+                             "contenido contenido contenido"
+                             "sidebar sidebar sidebar"
+                             "widget1 widget1 widget2"
+                             "footer footer footer";
+    }
+}
+
